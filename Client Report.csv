@@ -1,0 +1,26 @@
+Client Module Report
+Test Case,Scenario,Detailed Results
+Date:2023-01-09
+Login Page,Login With Correct Username & Password,Login Successful,https://staging.brandsignals.io/
+Client Module,Click on Client Button,Successful,https://staging.brandsignals.io/clients/
+Create Client,Click on Create Client Button,Successful,https://staging.brandsignals.io/clients/
+Create Client,Check Special Characters are not allowed,Client name should be 100 characters and No special characters allowed.,https://staging.brandsignals.io/clients/
+Create Client,Check 100 Characters limitation,Client name should be 100 characters and No special characters allowed.,https://staging.brandsignals.io/clients/
+Create Client,Enter Correct Client Name,Successful,https://staging.brandsignals.io/clients/
+Create Client,Click on ADD Client Button,Client Created Successfully!,https://staging.brandsignals.io/clients/
+Search Client,Search Client on front End,hcaxzn12167,https://staging.brandsignals.io/clients/
+Edit Client,Edit Client after search new created client,Successful,https://staging.brandsignals.io/clients/
+Edit Client,Enter new Client name,Successful,https://staging.brandsignals.io/clients/
+Edit Client,Click on Edit Client Button,Client Already Exists!,https://staging.brandsignals.io/clients/
+Search Client,Search Client on front end after edit client,hsdvsdvaxn1213,https://staging.brandsignals.io/clients/
+Create Client,Create Client From Campaign Module,Creating new client
+Campaign Module,Click on Campaign Button,Successful,https://staging.brandsignals.io/campaign/
+Create Campaign,Click on Create Campaign Button,Successful,https://staging.brandsignals.io/campaign/create/
+Create Client,Click on Create Client button in campaign creation page,Successful,https://staging.brandsignals.io/campaign/create/
+Create Client,Check Special Characters are not allowed while creating client,Client name should be 100 characters and no special characters allowed.,https://staging.brandsignals.io/campaign/create/
+Create Client,Check 100 Characters limitation while creating client,Client name should be 100 characters and no special characters allowed.,https://staging.brandsignals.io/campaign/create/
+Create Client,Enter Correct Client Name while creating Client from campaign creation page,Successful,https://staging.brandsignals.io/campaign/create/
+Create Client,Click on Add Client Button while creating Client from campaign creation page,Cant Add Client Already Exist!,https://staging.brandsignals.io/campaign/create/
+Client module,Click on Client module Button,Successful,https://staging.brandsignals.io/clients/
+Search Client,Search client on front end after create client from campaign creation page ,haasdvsxsxan12,https://staging.brandsignals.io/clients/
+Login Credentials,Username:Usman_AU_Testing,Password:Usman@112

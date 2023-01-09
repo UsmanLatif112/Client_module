@@ -50,7 +50,7 @@ def main():
     make_csv('Campaign Report.csv', '\n', new=False)
     make_csv('Client Report.csv', f'Date:{today}\n', new=False)
     if success:
-        make_csv('Client Report.csv', f'Login Page,Login With Correct Username & Password,Login Successfull,{url_a}\n', new=False)
+        make_csv('Client Report.csv', f'Login Page,Login With Correct Username & Password,Login Successful,{url_a}\n', new=False)
     else:
         make_csv('Client Report.csv', 'Login Page,Login With Correct Username & Password,Invalid Credentials\n', new=False)
 
@@ -59,14 +59,14 @@ def main():
     Home_Mod = HomePage(driver)
     Home_Mod.click_client_btn(ClientModuleResource.Client_Module)
     url_b = (driver.current_url)
-    make_csv('Client Report.csv', f'Client Module,Click on Client Button,Successfull,{url_b}\n', new=False)
+    make_csv('Client Report.csv', f'Client Module,Click on Client Button,Successful,{url_b}\n', new=False)
  
  # Click on the Create lient module====   
 
     CreateClient_Mod = CreateClient(driver)
     CreateClient_Mod.Click_Create_Client_btn(ClientModuleResource.Create_Client)
     url_c = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Click on Create Client Button,Successfull,{url_c}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Click on Create Client Button,Successful,{url_c}\n', new=False)
 
 # Check Special Chracter and Limtation while creating Client ==== 
  
@@ -75,7 +75,7 @@ def main():
     Client_Mod.enter_Client_Name(ClientModuleResource.CLIENTNAME, "@#!$%^&*")
     url_d = (driver.current_url)
     Pop_nam = driver.find_element(By.XPATH, "//*[@class='mt-2 text-danger warning-text']").text
-    make_csv('Client Report.csv', f'Create Client,Check Special Chracters are not allowed,{Pop_nam},{url_d}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Check Special Characters are not allowed,{Pop_nam},{url_d}\n', new=False)
     time.sleep(.5)
     
     Name_Clear = driver.find_element(By.XPATH,"//*[@id='client_name']").clear()
@@ -87,7 +87,7 @@ def main():
     Client_Mod1.enter_Client_Name(ClientModuleResource.CLIENTNAME, "vosdfihvcbiudspvjhkldzsjvkluzdxghbvhjzcxhkdxvbhkdsvbhdsbvjshcbvsdhbvhjzxbvgxjhzcbkxcbjkbzhbjnvhfbghdc")  
     Pop_nam1 = driver.find_element(By.XPATH, "//*[@class='mt-2 text-danger warning-text']").text
     url_e = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Check 100 Chracters limitation,{Pop_nam1},{url_e}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Check 100 Characters limitation,{Pop_nam1},{url_e}\n', new=False)
     time.sleep(.5)
     
     Name_Clear1 = driver.find_element(By.XPATH,"//*[@id='client_name']").clear()
@@ -98,13 +98,13 @@ def main():
     time.sleep(.5)
     Client_Mod2.enter_Client_Name(ClientModuleResource.CLIENTNAME, Client_name)
     url_f = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Enter Correct Client Name,Successfull,{url_f}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Enter Correct Client Name,Successful,{url_f}\n', new=False)
     time.sleep(.5)
     
     Add_Client = AddClient(driver)
     Add_Client.add_client_Btn(ClientModuleResource.ADDCLIENT)
     Create_clientt = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.ID, "popUpMessage"))
+        EC.presence_of_element_located((By.ID, "popUpMessage"))
     )
     Pop_namee = driver.find_element(By.ID, "popUpMessage").text
     url_g = (driver.current_url)
@@ -117,7 +117,7 @@ def main():
     time.sleep(.5)
     Client_Mod3.Search_Client_Name(SearchClientResource.Search_Bar, Client_name) 
     Create_clien1t = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@class='compaign-holder-name']"))
+        EC.presence_of_element_located((By.XPATH, "//*[@class='compaign-holder-name']"))
     )
     time.sleep(5)
     Pop_namwe = driver.find_element(By.XPATH, f'//*[contains(normalize-space(),"{Client_name}")][@class="compaign-holder-name"]').text 
@@ -135,7 +135,7 @@ def main():
     Edit_Client.Edit_Client_2(EditClientResource.edit_client2)
     time.sleep(1)
     url_i = (driver.current_url)
-    make_csv('Client Report.csv', f'Edit Client,Edit Client after search new created client,Successfull,{url_i}\n', new=False)
+    make_csv('Client Report.csv', f'Edit Client,Edit Client after search new created client,Successful,{url_i}\n', new=False)
     time.sleep(1)
    
     Edit_Client_102 = driver.find_element(By.XPATH, "//*[@id='client_name-edit-id']").clear()
@@ -145,7 +145,7 @@ def main():
     time.sleep(.5)
     Edit_Client.Edit_Client_Name(EditClientResource.EDITCLIENTNAME, Client_name1) 
     url_j = (driver.current_url)
-    make_csv('Client Report.csv', f'Edit Client,Enter new client name,Successfull,{url_j}\n', new=False)
+    make_csv('Client Report.csv', f'Edit Client,Enter new Client name,Successful,{url_j}\n', new=False)
     time.sleep(0.5)
     
     Edit_Client = EditClient(driver)
@@ -153,7 +153,7 @@ def main():
     Edit_Client.Edit_CLient_btn(EditClientResource.EDITCLIENT_BTN)
     url_k = (driver.current_url)
     Create_clien2t = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.ID, "popUpMessage"))
+        EC.presence_of_element_located((By.ID, "popUpMessage"))
     )
     Pop_namvt = driver.find_element(By.ID, "popUpMessage").text
     make_csv('Client Report.csv', f'Edit Client,Click on Edit Client Button,{Pop_namvt},{url_k}\n', new=False)
@@ -166,7 +166,7 @@ def main():
     url_l = (driver.current_url)
     Client_Mod3.Search_Client_Name(SearchClientResource.Search_Bar, Client_name1)
     Create_clien9t = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@class='compaign-holder-name']"))
+        EC.presence_of_element_located((By.XPATH, "//*[@class='compaign-holder-name']"))
     )
     time.sleep(5)
     Pop_nampz = driver.find_element(By.XPATH, f'//*[contains(normalize-space(),"{Client_name1}")][@class="compaign-holder-name"]').text 
@@ -183,7 +183,7 @@ def main():
     time.sleep(.5)
     Cam_module.click_Campaign(CreateClientFromCamResource.campaign_btn)  
     url_m = (driver.current_url)
-    make_csv('Client Report.csv', f'Campaign Module,Click on Campaign Button,Successfull,{url_m}\n', new=False)
+    make_csv('Client Report.csv', f'Campaign Module,Click on Campaign Button,Successful,{url_m}\n', new=False)
     time.sleep(2)
 
 # Click on Create campaign button to create new client
@@ -192,7 +192,7 @@ def main():
     time.sleep(.5)
     Cam_Module1.Click_Create_cam_btn(CreateClientFromCamResource.Create_campaign_btn)
     url_n = (driver.current_url)  
-    make_csv('Client Report.csv', f'Create Campaign,Click on Create Campaign Button,Successfull,{url_n}\n', new=False)
+    make_csv('Client Report.csv', f'Create Campaign,Click on Create Campaign Button,Successful,{url_n}\n', new=False)
     time.sleep(1)
     
 # Click on Create client button in create campain page
@@ -201,7 +201,7 @@ def main():
     time.sleep(.5)
     Cam_module2.Create_Client_from_cam(CreateClientFromCamResource.Create_client_btn) 
     url_o = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Click on Create Client button in campaign creation page,Successfull,{url_o}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Click on Create Client button in campaign creation page,Successful,{url_o}\n', new=False)
     time.sleep(2)
 
 # Check 100 chracter and specail chracter while creating client from create campaign page==
@@ -211,7 +211,7 @@ def main():
     Cam_Module3.add_client_nam(CreateClientFromCamResource.Add_client_name, "@#$@%#^#@%@%")
     Pop_nammt = driver.find_element(By.XPATH, "//*[@id='edit-campaign-client']").text 
     url_p = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Check Special Chracters are not allowed while creating client,{Pop_nammt},{url_p}\n', new=False)  
+    make_csv('Client Report.csv', f'Create Client,Check Special Characters are not allowed while creating client,{Pop_nammt},{url_p}\n', new=False)  
     time.sleep(1)
     
     Clear_name1 = driver.find_element(By.XPATH,"//*[@id='campaign-client-name-cam']").clear()
@@ -222,7 +222,7 @@ def main():
     Cam_Module3.add_client_nam(CreateClientFromCamResource.Add_client_name, "vosdfihvcbiudspvjhkldzsjvkluzdxghbvhjzcxhkdxvbhkdsvbhdsbvjshcbvsdhbvhjzxbvgxjhzcbkxcbjkbzhbjnvhfbghdc")  
     Pop_nam7 = driver.find_element(By.XPATH, "//*[@id='edit-campaign-client']").text
     url_q = (driver.current_url)
-    make_csv('Client Report.csv', f'Create Client,Check 100 Chracters limitation while creating client,{Pop_nam7},{url_q}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Check 100 Characters limitation while creating client,{Pop_nam7},{url_q}\n', new=False)
     time.sleep(1)
     
     Clear_name2 = driver.find_element(By.XPATH,"//*[@id='campaign-client-name-cam']").clear()
@@ -231,7 +231,7 @@ def main():
     time.sleep(.5)
     Cam_Module3.add_client_nam(CreateClientFromCamResource.Add_client_name, Client_name2)
     url_r = (driver.current_url) 
-    make_csv('Client Report.csv', f'Create Client,Enter Correct Client Name while creating client from campaign creation page,Successfull,{url_r}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Enter Correct Client Name while creating Client from campaign creation page,Successful,{url_r}\n', new=False)
     time.sleep(1)
     
     Cam_module5 = CreateClientFromCampaign(driver)
@@ -239,10 +239,10 @@ def main():
     url_s = (driver.current_url)
     Cam_module5.add_client_btn1(CreateClientFromCamResource.add_client_btn) 
     Create_clien19t = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.ID, "popUpMessage"))
+        EC.presence_of_element_located((By.ID, "popUpMessage"))
     )
     Pop_namcg = driver.find_element(By.ID, "popUpMessage").text
-    make_csv('Client Report.csv', f'Create Client,Click on Add Client Button while creating client from campaign creation page,{Pop_namcg},{url_s}\n', new=False)
+    make_csv('Client Report.csv', f'Create Client,Click on Add Client Button while creating Client from campaign creation page,{Pop_namcg},{url_s}\n', new=False)
     time.sleep(3)
 
 # Click on client module button 
@@ -251,7 +251,7 @@ def main():
     time.sleep(.5)
     Cam_module18.client_btn12(CreateClientFromCamResource.Client_mod14) 
     url_t = (driver.current_url) 
-    make_csv('Client Report.csv', f'Client module,Click on Client module Button,Successfull,{url_t}\n', new=False)
+    make_csv('Client Report.csv', f'Client module,Click on Client module Button,Successful,{url_t}\n', new=False)
     time.sleep(2)
 
 # Search client on front end 
@@ -261,7 +261,7 @@ def main():
     Search_Client12.Search_new_client(CreateClientFromCamResource.Search_Bar1, Client_name2)
     url_u = (driver.current_url)
     Create_clien15t = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@class='compaign-holder-name']"))
+        EC.presence_of_element_located((By.XPATH, "//*[@class='compaign-holder-name']"))
     )
     time.sleep(5)
     Pop_namxp = driver.find_element(By.XPATH, f'//*[contains(normalize-space(),"{Client_name2}")][@class="compaign-holder-name"]').text 
